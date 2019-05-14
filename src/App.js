@@ -1,9 +1,10 @@
-import React from 'react';
+import React from 'react'
+import Booking from './Booking'
 
 function App() {
   return (
     <div>
-      test
+      <Booking />
     </div>
   );
 }
