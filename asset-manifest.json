@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Booking/static/css/main.bc1af6cd.chunk.css",
+    "main.js": "/Booking/static/js/main.0156a780.chunk.js",
+    "main.js.map": "/Booking/static/js/main.0156a780.chunk.js.map",
+    "runtime~main.js": "/Booking/static/js/runtime~main.09c3bb93.js",
+    "runtime~main.js.map": "/Booking/static/js/runtime~main.09c3bb93.js.map",
+    "static/js/2.a76cda97.chunk.js": "/Booking/static/js/2.a76cda97.chunk.js",
+    "static/js/2.a76cda97.chunk.js.map": "/Booking/static/js/2.a76cda97.chunk.js.map",
+    "index.html": "/Booking/index.html",
+    "precache-manifest.17a50ee3579ac51c068ab5fe4497da4f.js": "/Booking/precache-manifest.17a50ee3579ac51c068ab5fe4497da4f.js",
+    "service-worker.js": "/Booking/service-worker.js",
+    "static/css/main.bc1af6cd.chunk.css.map": "/Booking/static/css/main.bc1af6cd.chunk.css.map"
+  }
+}
