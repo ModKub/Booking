@@ -1,5 +1,5 @@
 # Booking
-Simple frontend app for arranging meetings with mock data, made to learn React Hooks. Tested on Chrome
+Simple frontend app for booking a visit with mock data, made to learn React Hooks. Tested on Chrome
 
 ## Built With
 
