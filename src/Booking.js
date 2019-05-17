@@ -8,8 +8,8 @@ import Modal from './components/Modal'
 const Hour = props => {
   return <div
     onClick={!props.isBooked ? props.startBooking : undefined}
-    className='rounded-full text-grey-darkest bg-white hover:bg-blue hover:text-white flex items-center hover:text-4xl justify-center cursor-pointer border border-blue-dark'
-    style={{ width: '60px', height: '60px', transition: '0.3s', marginBottom: '5px', background: props.isBooked && 'grey' }}>
+    className='rounded-full text-gray-700 bg-white hover:bg-blue-500 hover:text-white flex items-center hover:text-4xl justify-center cursor-pointer border border-blue-600'
+    style={{ width: '60px', height: '60px', transition: '0.3s', marginBottom: '5px', background: props.isBooked && 'gray', color: props.isBooked && 'White' }}>
     <span>{props.hour}</span>
   </div>
 }
@@ -17,7 +17,7 @@ const Hour = props => {
 const Day = props => {
   const bookedHours = props.booked.map(el => el.hour)
   return <div className='flex flex-col items-center' style={{marginBottom: '10px'}}>
-    <div className='flex flex-col text-grey-darker items-center' style={{marginBottom: '10px'}}>
+    <div className='flex flex-col text-gray-700 items-center' style={{marginBottom: '10px'}}>
       <div style={{ fontSize: '20px' }}>{props.dayName}</div>
       <div>{props.date.format('DD.MM.YY')}</div>
     </div>
@@ -29,10 +29,10 @@ const Day = props => {
 }
 
 const Book = props => {
-  return <div style={{marginBottom: '10px', padding: '30px', width: '300px', height: '300px'}}>
-    <div className='text-grey-dark border-b' style={{ fontSize: '24px', marginBottom: '10px' }}>{props.name}</div>
+  return <div style={{marginBottom: '10px', padding: '30px', width: '300px'}}>
+    <div className='text-gray-700 border-b' style={{ fontSize: '24px', marginBottom: '10px' }}>{props.name}</div>
     <div>Termin</div>
-    <div style={{ marginBottom: '20px' }}>{props.date.format('LL')} godzina {props.hour}</div>
+    <div style={{ marginBottom: '10px' }}>{props.date.format('LL')} godzina {props.hour}</div>
     <form onSubmit={(e) => {
         e.preventDefault()
         props.book(e, props.date, props.hour)
@@ -43,17 +43,17 @@ const Book = props => {
           <input type='text' className='border' value={props.bookName} required onChange={e => props.setBookName(e.target.value)} />
         </label>
       </div>
-      <div style={{ marginBottom: '10px' }}>
+      <div style={{ marginBottom: '20px' }}>
         <label>
           * E-mail:
           <input type='email' className='border' value={props.bookMail} required onChange={(e) => props.setBookMail(e.target.value)} />
         </label>
       </div>
 
-        <button type='submit' className='bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded'>
+        <button type='submit' className='bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
           Zarezerwuj
         </button>
-        <button type='button' onClick={props.closeModal} className='bg-red hover:bg-blue-dark text-white font-bold py-2 px-4 rounded' style={{ marginLeft: '5px' }}>
+        <button type='button' onClick={props.closeModal} className='bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded' style={{ marginLeft: '5px' }}>
           Anuluj
         </button>
     </form>
@@ -108,12 +108,12 @@ const Booking = () => {
 
   if (!daysToDisplay[0]) return null
   return <div style={{ position: 'relative', maxWidth: '800px' }}>
-    <div className='text-grey-darker' style={{ fontSize: '24px' }}>{name}</div>
+    <div className='text-gray-700' style={{ fontSize: '24px' }}>{name}</div>
     <div
       onClick={() => {
         setCurrentDay(moment())
       }}
-      className='rounded-full text-grey-darkest bg-white hover:bg-blue hover:text-white flex items-center justify-center cursor-pointer border border-blue-dark float-right'
+      className='rounded-full text-gray-700 bg-white hover:bg-blue-600 hover:text-white flex items-center justify-center cursor-pointer border border-blue-700 float-right'
       style={{ width: '60px', height: '60px', transition: '0.3s', marginBottom: '5px' }}>
       <span>TODAY</span>
     </div>
@@ -125,11 +125,11 @@ const Booking = () => {
       }
     </div>
     <div className='nextPosition'>
-      <i style={{ fontSize: '40px' }} className='fas fa-chevron-right text-grey-darker hover:text-grey cursor-pointer' onClick={displayNextWeek} />
+      <i style={{ fontSize: '40px' }} className='fas fa-chevron-right text-gray-600 hover:text-gray cursor-pointer' onClick={displayNextWeek} />
     </div>
     {date < daysToDisplay[0] &&
       <div className='backPosition'>
-        <i style={{ fontSize: '40px' }} className='fas fa-chevron-left text-grey-darker hover:text-grey cursor-pointer' onClick={displayPreviousWeek} />
+        <i style={{ fontSize: '40px' }} className='fas fa-chevron-left text-gray-600 hover:text-gray cursor-pointer' onClick={displayPreviousWeek} />
       </div>
     }
     {startedBooking &&
